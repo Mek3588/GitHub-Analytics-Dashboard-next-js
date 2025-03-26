@@ -1,157 +1,66 @@
-GitHub Analytics Dashboard
-Frontend Coding Challenge – GitHub Analytics Dashboard
-25/03/2025
+# GitHub Analytics Dashboard
 
-Overview
-The GitHub Analytics Dashboard is a frontend-only web application built using Next.js (App Router) and TypeScript that consumes the GitHub REST API to display a user’s GitHub analytics. The goal of this challenge is to evaluate frontend skills, including state management, theming, and building a scalable, modern React/Next.js application.
+## Overview
+Welcome to the **GitHub Analytics Dashboard**, a web application built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**. This dashboard allows users to view detailed analytics from a GitHub account, including public repositories, activity feeds, and general user statistics. The app pulls data directly from the **GitHub REST API** and provides a modern, responsive, and user-friendly interface.
 
-This project includes essential GitHub data such as user information, repositories, activity logs, and more, all fetched from the public GitHub API.
+### Technologies Used:
+- **Next.js (App Router)** – For the main framework, handling routing and server-side rendering (SSR).
+- **TypeScript** – To ensure type safety and enhanced developer experience.
+- **Tailwind CSS** – For styling the application in a modern and flexible way.
+- **Redux Toolkit** (or Zustand) – For state management across the app.
+- **GitHub REST API** – To fetch user data, repositories, and activity information.
+- **Vercel** (for deployment) – Deployed and hosted on Vercel for seamless performance.
 
-Table of Contents
-Objective
+## Features
 
-Features
+### 1. **Authentication (Mocked)**
+- A simple **login screen** with static credentials (e.g., `admin` / `admin123`).
+- Upon successful login, users are redirected to the **dashboard**.
+- Protection is in place for `/dashboard` routes to prevent unauthorized access.
 
-Required Features
+### 2. **Dashboard Layout (/dashboard)**
+- **Responsive Layout** that adjusts to different screen sizes.
+- **Sidebar** for easy navigation between tabs.
+- **Topbar** displaying the logged-in user's username and providing a **logout** button.
+- A toggle for **Light/Dark Mode**, with the selected theme saved in `localStorage` or `cookies`.
 
-Bonus Features
+### 3. **Tabs/Pages:**
+#### 3.1 **Overview Tab**
+- Displays key information about a GitHub user, such as:
+  - Avatar
+  - Name and Bio
+  - Public repository count
+  - Followers and following count
+  - Top 3 repositories (sorted by star count)
+- Data fetched from: `https://api.github.com/users/{username}`.
 
-Deployment
+#### 3.2 **Repositories Tab**
+- Lists all public repositories of the user, showing:
+  - Repository name
+  - Description
+  - Primary language
+  - Star count
+  - Last updated time
+- Supports **pagination** or **infinite scroll** for easy navigation.
+- Data fetched from: `https://api.github.com/users/{username}/repos`.
 
-Technologies Used
+#### 3.3 **Activity Tab**
+- Displays the user’s **recent public GitHub activity**:
+  - Lists the last 10 events with their type and date.
+- Data fetched from: `https://api.github.com/users/{username}/events/public`.
 
-Setup Instructions
+#### 3.4 **Settings Tab**
+- Includes preferences for users:
+  - **Theme toggle**: Switch between light and dark mode.
+  - **Layout preference**: Choose between a compact or comfortable layout.
+  - **Clear cached data**: Reset user state and clear any stored data.
 
-Architecture
+## Setup Instructions
 
-Screenshots
+### Prerequisites:
+Before getting started, ensure you have **Node.js** and **npm** installed.
 
-Contributing
-
-Objective
-Build a GitHub Analytics Dashboard with the following features:
-
-Authentication (Mocked): A login screen with static credentials (e.g., admin / admin123).
-
-Dashboard Layout: A responsive dashboard with a sidebar, topbar, and a theme toggle.
-
-Tabs/Pages:
-
-Overview: User data, top repositories, followers/following.
-
-Repositories: List all public repositories with pagination or infinite scroll.
-
-Activity: Display recent GitHub activity.
-
-Settings: Theme toggle, layout preferences, and data reset.
-
-Additional Features: Error handling, loading states, and user protection.
-
-Features
-Required Features
-Authentication (Mocked):
-
-Static login with username and password (admin / admin123).
-
-Redirect to the dashboard on successful login.
-
-Protect all /dashboard routes from unauthenticated access.
-
-Dashboard Layout:
-
-Sidebar for navigation.
-
-Topbar displaying username and logout button.
-
-Light/Dark mode toggle with state persistence in localStorage.
-
-Tabs/Pages:
-
-Overview Tab: Displays GitHub user information including avatar, name, bio, public repository count, followers, and top repositories.
-
-API: https://api.github.com/users/{username}
-
-Repositories Tab: Lists all repositories, with pagination or infinite scroll support.
-
-API: https://api.github.com/users/{username}/repos
-
-Activity Tab: Shows recent public GitHub events (last 10 events).
-
-API: https://api.github.com/users/{username}/events/public
-
-Settings Tab: Allows the user to toggle light/dark mode and change layout preferences.
-
-Bonus Features (Optional)
-Allow users to search for any GitHub username.
-
-Display a graph showing language usage per repository.
-
-Skeleton loaders during data loading.
-
-Implement SSR/ISR for the Overview tab for better performance.
-
-Deployment
-The final solution is deployed on Vercel, providing seamless serverless deployment for Next.js projects.
-
-Deployed URL: GitHub Analytics Dashboard
-
-Technologies Used
-Next.js (App Router) – Framework for building the application.
-
-TypeScript – For type safety and better development experience.
-
-Redux Toolkit or Zustand – State management.
-
-Tailwind CSS – For modern, responsive styling.
-
-GitHub REST API – To fetch user data and repositories.
-
-localStorage/Cookies – For persistent theme management.
-
-Setup Instructions
-Clone the repository:
-
-bash
-Copy
-Edit
+### 1. **Clone the Repository:**
+```bash
 git clone https://github.com/Mek3588/GitHub-Analytics-Dashboard-next-js.git
 cd GitHub-Analytics-Dashboard-next-js
-Install dependencies: Ensure you have Node.js installed, then run:
-
-bash
-Copy
-Edit
-npm install
-Run the development server: To start the development server, run:
-
-bash
-Copy
-Edit
-npm run dev
-Navigate to http://localhost:3000 in your browser to view the dashboard.
-
-Production build: For a production build, run:
-
-bash
-Copy
-Edit
-npm run build
-npm run start
-Architecture
-Folder Structure:
-The project follows a modular structure for scalability and maintainability:
-
-bash
-Copy
-Edit
-/components    # Reusable UI components (e.g., Sidebar, Navbar, ThemeSwitcher)
-/pages         # Pages for each route (e.g., /dashboard, /settings)
-/store         # State management using Redux Toolkit or Zustand
-/styles        # Tailwind CSS configuration and custom styles
-/utils         # Utility functions (e.g., API calls, theme toggling)
-Decisions:
-State Management: Chose Redux Toolkit for its simplicity and flexibility.
-
-Styling: Used Tailwind CSS for a utility-first, responsive layout.
-
-API Integration: Leveraged the GitHub REST API for data fetching.
