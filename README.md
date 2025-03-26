@@ -55,6 +55,10 @@ Welcome to the **GitHub Analytics Dashboard**, a web application built with **Ne
   - **Layout preference**: Choose between a compact or comfortable layout.
   - **Clear cached data**: Reset user state and clear any stored data.
   - 
+### Deployment:
+Vercel Deployment
+https://git-hub-analytics-dashboard-next-js.vercel.app
+
 ## Setup Installations
   Clone the repository:
   git clone https://github.com/your-username/github-analytics-dashboard.git
