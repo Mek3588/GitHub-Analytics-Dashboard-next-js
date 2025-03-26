@@ -54,8 +54,19 @@ Welcome to the **GitHub Analytics Dashboard**, a web application built with **Ne
   - **Theme toggle**: Switch between light and dark mode.
   - **Layout preference**: Choose between a compact or comfortable layout.
   - **Clear cached data**: Reset user state and clear any stored data.
-
-## Setup Instructions
+  - 
+## Setup Installations
+  Clone the repository:
+  git clone https://github.com/your-username/github-analytics-dashboard.git
+  
+  Navigate to project:
+  cd github-analytics-dashboard
+  
+  Install dependencies:
+  npm install
+  
+  Start development server:
+  npm run dev
 
 ### Prerequisites:
 Before getting started, ensure you have **Node.js** and **npm** installed.
